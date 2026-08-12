@@ -1,9 +1,8 @@
-# rasp_pi_game
 Simple incremental game for raspberry pi
 
 ## Hardware requirements
 
-**Raspberry Pi*
+**Raspberry Pi**
 - [Pi 4 (2GB)](https://www.raspberrystore.nl/PrestaShop/nl/raspberry-pi-v4/227-raspberry-pi-4-model-b-2gb-5056561800332.html?_gl=1*9wv6j9*_up*MQ..*_ga*ODU1MTUzNzMuMTc4NjU2NTE5NA..*_ga_W13TC9FVPF*czE3ODY1NjUxOTIkbzEkZzEkdDE3ODY1Njc0NTgkajYwJGwwJGgxNTY0MDk2ODIx)
 
 **Display**
