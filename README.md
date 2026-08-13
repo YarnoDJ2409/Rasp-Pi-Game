@@ -3,21 +3,24 @@ Simple incremental game for raspberry pi
 ## Hardware requirements
 
 **Raspberry Pi**
-- [Pi 4 (2GB)](https://www.raspberrystore.nl/PrestaShop/nl/raspberry-pi-v4/227-raspberry-pi-4-model-b-2gb-5056561800332.html?_gl=1*9wv6j9*_up*MQ..*_ga*ODU1MTUzNzMuMTc4NjU2NTE5NA..*_ga_W13TC9FVPF*czE3ODY1NjUxOTIkbzEkZzEkdDE3ODY1Njc0NTgkajYwJGwwJGgxNTY0MDk2ODIx)
+- [Pi 4 (2GB)](https://www.kiwi-electronics.com/nl/raspberry-pi-boards-behuizingen-uitbreidingen-en-accessoires-59/raspberry-pi-4-model-b-2gb-4267)
 
 **Display**
-- [3,5 inch display - 480×320 IPS Touchscreen (SPI)](https://www.raspberrystore.nl/PrestaShop/nl/beeldschermen/742-touch-screen-display-for-pironman.html?_gl=1*1vh7qe9*_up*MQ..*_ga*OTAwODIyNjA5LjE3ODY1Njg1NjU.*_ga_W13TC9FVPF*czE3ODY1Njg1NjUkbzEkZzEkdDE3ODY1Njg1NjgkajU3JGwwJGgyMTM0Nzc2OTA.)
+- [4,3 inch display - 800x480 DSI LCD)](https://www.kiwi-electronics.com/nl/raspberry-pi-boards-behuizingen-uitbreidingen-en-accessoires-59/beeldschermen-monitoren-voor-de-raspberry-pi-413/4-3-inch-dsi-touch-display-voor-raspberry-pi-800x480-10259)
+- [Installation Manual](https://www.waveshare.com/wiki/4.3inch_DSI_LCD)
 
 **Buttons**
 - Main button (for selection)
 - Arrow buttons or joystick
 
 **MicroSD**
-- 32 GB
+- 32 or 64 GB
 
 **Power Supply**
-- [5V 3A power supply](https://www.raspberrystore.nl/PrestaShop/nl/raspberry-pi-400-500/229-raspberry-pi-15w-3a-usb-c-power-supply-stroomadapter-eu-wit-5056561801216.html?_gl=1*1233x9h*_up*MQ..*_ga*OTAwODIyNjA5LjE3ODY1Njg1NjU.*_ga_W13TC9FVPF*czE3ODY1NzE3NjgkbzIkZzEkdDE3ODY1NzE3ODAkajQ4JGwwJGgxNDA4NzM5NDYy) or PiSugar battery
+- [5V 3A power supply](https://www.kiwi-electronics.com/nl/raspberry-pi-boards-behuizingen-uitbreidingen-en-accessoires-59/raspberry-pi-4-usb-c-voeding-zwart-eu-4270) or PiSugar battery
 
 **Extras**
 - Cables
+
+**Optional**
 - Breadboard
