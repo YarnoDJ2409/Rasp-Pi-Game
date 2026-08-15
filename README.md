@@ -6,7 +6,7 @@ Simple incremental game for raspberry pi
 - [Pi 4 (2GB)](https://www.kiwi-electronics.com/nl/raspberry-pi-boards-behuizingen-uitbreidingen-en-accessoires-59/raspberry-pi-4-model-b-2gb-4267)
 
 **Display**
-- [4,3 inch display - 800x480 DSI LCD)](https://www.kiwi-electronics.com/nl/raspberry-pi-boards-behuizingen-uitbreidingen-en-accessoires-59/beeldschermen-monitoren-voor-de-raspberry-pi-413/4-3-inch-dsi-touch-display-voor-raspberry-pi-800x480-10259)
+- [4,3 inch display - 800x480 DSI LCD](https://www.kiwi-electronics.com/nl/raspberry-pi-boards-behuizingen-uitbreidingen-en-accessoires-59/beeldschermen-monitoren-voor-de-raspberry-pi-413/4-3-inch-dsi-touch-display-voor-raspberry-pi-800x480-10259)
 - [Installation Manual](https://www.waveshare.com/wiki/4.3inch_DSI_LCD)
 
 **Buttons**
@@ -26,7 +26,7 @@ Simple incremental game for raspberry pi
 - [Male headers (90 degree bend)](https://www.kiwi-electronics.com/nl/40-pin-header-strip-90-hoek-2-54mm-pitch-20216?search=header&page=2) (if the joystick lacks headers)
 
 **Optional**
-- Breadboard (for testing)
+- [Breadboard](https://www.kiwi-electronics.com/nl/400-punt-breadboard-wit-283) (for testing)
 
 
 ## Connecting the hardware
