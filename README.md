@@ -61,6 +61,7 @@ sudo apt-get full-upgrade -y
 **LCD Display**
 
 - Use an FFC (Flexible Flat Cable) to connect the DSI (Display Serial Interface) on the LCD display to the 15PIN DSI interface on the Raspberry Pi board, as shown in the image:
+  
   <img width="482" height="364" alt="image" src="https://github.com/user-attachments/assets/8f55070f-7794-48a0-9150-0db3c7ee0db0" />
 - For convenience, you can fix the Raspberry Pi on the backside of the LCD display with screws and the copper columns.
 
@@ -88,6 +89,7 @@ sudo apt-get full-upgrade -y
 | - | Pin 13 (CLK) | Pin 23 (GPIO 11 / SPI SCLK) |
 
 Pinout of the MCP3008:
+
 <img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/30b33f96-74f7-4bee-8255-c15eaef9c476" />
 
  - [Click here](https://www.raspberrypi-spy.co.uk/2014/04/using-a-joystick-on-the-raspberry-pi-using-an-mcp3008/) for an example of the joystick connection using an MCP3008.
