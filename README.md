@@ -10,7 +10,7 @@ Simple incremental game for raspberry pi
 
 **Buttons**
 - [Main button](https://www.kiwi-electronics.com/nl/drukknop-12mm-10-stuks-403?search=button&page=2) (for selection)
-- Arrow buttons or [joystick](https://www.kiwi-electronics.com/nl/analoge-2-assige-joystick-met-selectieknop--breakout-board-1839?search=thumb%20joystick)
+- [Joystick](https://www.kiwi-electronics.com/nl/analoge-2-assige-joystick-met-selectieknop--breakout-board-1839?search=thumb%20joystick)
 
 **MicroSD**
 - 32 or 64 GB
@@ -53,6 +53,41 @@ sudo apt-get full-upgrade -y
 
 ## Connecting the hardware
 
-[Raspberry pi pinout](https://pinout.xyz/)
+**Raspberry Pi**
 
-[LCD Installation Manual](https://www.waveshare.com/wiki/4.3inch_DSI_LCD)
+- Insert the MicroSD at the underside of the Raspberry Pi
+- Insert the power cable (USB-C) to turn on the Raspberry Pi **Do not insert the power cable while connecting any hardware**
+
+**LCD Display**
+
+- Use an FFC (Flexible Flat Cable) to connect the DSI (Display Serial Interface) on the LCD display to the 15PIN DSI interface on the Raspberry Pi board, as shown in the image:
+  <img width="482" height="364" alt="image" src="https://github.com/user-attachments/assets/8f55070f-7794-48a0-9150-0db3c7ee0db0" />
+- For convenience, you can fix the Raspberry Pi on the backside of the LCD display with screws and the copper columns.
+
+**Main Button**
+
+- Connect one pin on the button to a GND (Ground) pin on the Raspberry Pi board (for example pin 9) (see [Raspberry pi pinout](https://pinout.xyz/) for a description of each pin on the Raspberry Pi).
+- Connect the pin on the button **diagonal to the one you chose in the previous step** to any GPIO pin on the Raspberry Pi board (for example pin 11).
+
+**Joystick**
+
+ - The joystick must be connected to both the Raspberry Pi board and an MCP3008 converter chip.
+ - If no headers are present on the chip of the joystick, solder some male headers with a 90 degree bend onto the chip (with the long heads sticking out sideways, solder the short ends at the bottom of the chip).
+ - Below is a table with all connections between the joystick, MCP3008 and Raspberry Pi board (the GND and 3.3V connections are bunched together to the same pin on the Raspberry Pi boar, either by twisting the cables together or using wire nuts):
+
+| Joystick Pin | MCP3008 Pin | Raspberry Pi Pin |
+| :---:| :---: | :---: |
+| GND | Pin 9 (DGND) & Pin 14 (AGND) | Pin 6 (GND) |
+| VCC (3.3V) | Pin 16 (VDD) & Pin 15 (VREF) | Pin 1 (3.3V Power) |
+| VRx | Pin 1 (CH0) | - |
+| VRy | Pin 2 (CH1) | - |
+| SW | - | Pin 22 (GPIO 25) |
+| - | Pin 10 (CS/SHDN) | Pin 24 (GPIO 8 / SPI CE0) |
+| - | Pin 11 (DIN) | Pin 19 (GPIO 10 / SPI MOSI) |
+| - | Pin 12 (DOUT) | Pin 21 (GPIO 9 / SPI MISO) |
+| - | Pin 13 (CLK) | Pin 23 (GPIO 11 / SPI SCLK) |
+
+Pinout of the MCP3008:
+<img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/30b33f96-74f7-4bee-8255-c15eaef9c476" />
+
+ - [Click here](https://www.raspberrypi-spy.co.uk/2014/04/using-a-joystick-on-the-raspberry-pi-using-an-mcp3008/) for an example of the joystick connection using an MCP3008.
