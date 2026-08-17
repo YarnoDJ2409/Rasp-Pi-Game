@@ -29,6 +29,26 @@ Simple incremental game for raspberry pi
 - [Breadboard](https://www.kiwi-electronics.com/nl/400-punt-breadboard-wit-283) (for testing)
 
 
+## Setting up the software (MicroSD Card)
+
+**Raspberry Pi OS (Operating System)**
+Connect the MicroSD to any computer using an adapter. Download the [Raspberry Pi Imager](https://www.raspberrypi.com/software/), run it and follow the instructions to write an OS image to your MicroSD. (Setup Raspberry Pi Connect during this process for easy controll of the Raspberry Pi latere down the line.)
+
+**LCD Display**
+Locate the *config.txt* on your MicroSD after the Raspberry Pi OS has been succesfully written. Add the following lines at the end of the text file:
+```
+dtoverlay=vc4-kms-v3d
+#DSI1 Use
+dtoverlay=vc4-kms-dsi-7inch
+#DSI0 Use
+#dtoverlay=vc4-kms-dsi-7inch,dsi0
+```
+Run the following lines to update the OS if needed:
+```
+sudo apt-get update
+sudo apt-get full-upgrade -y
+```
+
 ## Connecting the hardware
 
 [Raspberry pi pinout](https://pinout.xyz/)
