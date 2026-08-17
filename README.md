@@ -34,9 +34,9 @@ Simple incremental game for raspberry pi
 
 Connect the MicroSD to any computer using an adapter. Download the [Raspberry Pi Imager](https://www.raspberrypi.com/software/), run it and follow the instructions to write an OS image to your MicroSD. (Setup Raspberry Pi Connect during this process for easy controll of the Raspberry Pi latere down the line.)
 
-**[LCD Display](https://www.waveshare.com/wiki/4.3inch_DSI_LCD)**
+**LCD Display**
 
-Locate the *config.txt* on your MicroSD after the Raspberry Pi OS has been succesfully written. Add the following lines at the end of the text file:
+Locate the *config.txt* on your MicroSD after the Raspberry Pi OS has been succesfully written to the MicroSD card. Add the following lines at the end of the text file:
 ```
 dtoverlay=vc4-kms-v3d
 #DSI1 Use
@@ -49,8 +49,10 @@ Run the following lines to update the OS if needed:
 sudo apt-get update
 sudo apt-get full-upgrade -y
 ```
+[Click here](https://www.waveshare.com/wiki/4.3inch_DSI_LCD) for instructions on editing features of the LCD display (such as backlight brightness or display rotation).
 
 ## Connecting the hardware
 
 [Raspberry pi pinout](https://pinout.xyz/)
+
 [LCD Installation Manual](https://www.waveshare.com/wiki/4.3inch_DSI_LCD)
