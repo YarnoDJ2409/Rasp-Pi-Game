@@ -10,9 +10,9 @@ button_a = Button(button_a_pin)
 button_b = Button(button_b_pin)
 
 def main_button_press(button):
-    print(f"Button {button} has been pressed!")
+    print(f"Button on GPIO {button.pin.number} has been pressed!")
 
-button_a.when_pressed = main_button_press("A")
-button_b.when_pressed = main_button_press("B")
+button_a.when_pressed = main_button_press
+button_b.when_pressed = main_button_press
 
 pause()
