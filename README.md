@@ -1,4 +1,4 @@
-Simple incremental game for raspberry pi
+Below is some documention on my Raspberry Pi project in which I attempt to make a custom handheld device as well as some simple games.
 
 ## Hardware requirements
 
