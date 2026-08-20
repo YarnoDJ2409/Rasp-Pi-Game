@@ -6,8 +6,8 @@ button_a_pin = 17 #GPIO number
 button_b_pin = 27 #GPIO number
 
 # Assign the two main buttons to their corresponding GPIO pins on the RPi board
-button_a = Button(button_a_pin)
-button_b = Button(button_b_pin)
+button_a = Button(button_a_pin, bounce_time=0.05)
+button_b = Button(button_b_pin, bounce_time=0.05)
 
 def main_button_press(button):
     print(f"Button on GPIO {button.pin.number} has been pressed!")
