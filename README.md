@@ -65,16 +65,17 @@ sudo apt-get full-upgrade -y
   <img width="482" height="364" alt="image" src="https://github.com/user-attachments/assets/8f55070f-7794-48a0-9150-0db3c7ee0db0" />
 - For convenience, you can fix the Raspberry Pi on the backside of the LCD display with screws and the copper columns.
 
-**Main Button**
+**Main Button(s)**
 
-- Connect one pin on the button to a GND (Ground) pin on the Raspberry Pi board (for example pin 9) (see [Raspberry pi pinout](https://pinout.xyz/) for a description of each pin on the Raspberry Pi).
-- Connect the pin on the button **diagonal to the one you chose in the previous step** to any GPIO pin on the Raspberry Pi board (for example pin 11).
+- Connect one pin on the button to a GND (Ground) pin on the Raspberry Pi board (for example pin 34) (see [Raspberry pi pinout](https://pinout.xyz/) for a description of each pin on the Raspberry Pi).
+- Connect the pin on the button **diagonal to the one you chose in the previous step** to any GPIO pin on the Raspberry Pi board (for example pin 36).
+- Perform the same steps for any other main buttons.
 
 **Joystick**
 
  - The joystick must be connected to both the Raspberry Pi board and an MCP3008 converter chip.
  - If no headers are present on the chip of the joystick, solder some male headers with a 90 degree bend onto the chip (with the long heads sticking out sideways, solder the short ends at the bottom of the chip).
- - Below is a table with all connections between the joystick, MCP3008 and Raspberry Pi board (the GND and 3.3V connections are bunched together to the same pin on the Raspberry Pi boar, either by twisting the cables together or using wire nuts):
+ - Below is a table with all connections between the joystick, MCP3008 and Raspberry Pi board (the GND and 3.3V connections are bunched together to the same pin on the Raspberry Pi board, either by twisting the cables together, soldering or using wire nuts):
 
 | Joystick Pin | MCP3008 Pin | Raspberry Pi Pin |
 | :---:| :---: | :---: |
@@ -82,7 +83,7 @@ sudo apt-get full-upgrade -y
 | VCC (3.3V) | Pin 16 (VDD) & Pin 15 (VREF) | Pin 1 (3.3V Power) |
 | VRx | Pin 1 (CH0) | - |
 | VRy | Pin 2 (CH1) | - |
-| SW | - | Pin 22 (GPIO 25) |
+| SW | - | Pin 11 (GPIO 17) |
 | - | Pin 10 (CS/SHDN) | Pin 24 (GPIO 8 / SPI CE0) |
 | - | Pin 11 (DIN) | Pin 19 (GPIO 10 / SPI MOSI) |
 | - | Pin 12 (DOUT) | Pin 21 (GPIO 9 / SPI MISO) |
