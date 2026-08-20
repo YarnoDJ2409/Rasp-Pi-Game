@@ -1,8 +1,8 @@
 from gpiozero import Button
 from signal import pause
 
-button_a_pin = 17 #GPIO number
-button_b_pin = 27 #GPIO number
+button_a_pin = 16 #GPIO number
+button_b_pin = 26 #GPIO number
 
 # Assign the two main buttons to their corresponding GPIO pins on the RPi board
 button_a = Button(button_a_pin, bounce_time=0.05)
