@@ -17,6 +17,8 @@ BOARDHEIGHT = 5 # number of rows of icons
 assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
 XMARGIN = int((WINDOWWIDTH - (BOARDWIDTH * (BOXSIZE + GAPSIZE))) / 2)
 YMARGIN = int((WINDOWHEIGHT - (BOARDHEIGHT * (BOXSIZE + GAPSIZE))) / 2)
+# FLAGS = pygame.FULLSCREEN # Enable fullscreen
+FLAGS = 0 # Disable fullscreen
 
 #            R    G    B
 GRAY     = (100, 100, 100)
@@ -46,7 +48,7 @@ ALLSHAPES = (DONUT, SQUARE, DIAMOND, LINES, OVAL)
 assert len(ALLCOLORS) * len(ALLSHAPES) * 2 >= BOARDWIDTH * BOARDHEIGHT, "Board is too big for the number of shapes/colors defined."
 
 def main():
-    global FPSCLOCK, DISPLAYSURF
+    global FPSCLOCK, DISPLAYSURF, mainBoard, revealedBoxes
     pygame.init()
     FPSCLOCK = pygame.time.Clock()
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
@@ -68,8 +70,8 @@ def main():
     resetSurfaceObj = fontObj.render('Reset', True, WHITE)
     resetRectObj = resetSurfaceObj.get_rect(center=(XMARGIN/2, 35))
     resetButtonRect = resetRectObj.inflate(22, 16)
-    pygame.draw.rect(DISPLAYSURF, LIGHTBGCOLOR, resetButtonRect, border_radius=8)
-    DISPLAYSURF.blit(resetSurfaceObj, resetRectObj)
+    pygame.draw.rect(DISPLAYSURF, LIGHTBGCOLOR, resetButtonRect, border_radius=8) # Draws the rectangle
+    DISPLAYSURF.blit(resetSurfaceObj, resetRectObj) # Draws the button text
 
     # Quit button
     quitSurfaceObj = fontObj.render('Quit', True, WHITE)
@@ -100,6 +102,7 @@ def main():
                 mousex, mousey = event.pos
                 mouseClicked = True
 
+        # Memory boxes handling
         boxx, boxy = getBoxAtPixel(mousex, mousey)
         if boxx != None and boxy != None:
             # The mouse is currently over a box.
@@ -125,19 +128,23 @@ def main():
                         gameWonAnimation(mainBoard)
                         pygame.time.wait(2000)
 
-                        # Reset the board
-                        mainBoard = getRandomizedBoard()
-                        revealedBoxes = generateRevealedBoxesData(False)
-
-                        # Show the fully unrevealed board for a second.
-                        drawBoard(mainBoard, revealedBoxes)
-                        pygame.display.update()
-                        pygame.time.wait(1000)
-
-                        # Replay the start game animation.
-                        startGameAnimation(mainBoard)
+                        resetBoard()
                     firstSelection = None # reset firstSelection variable
-
+                    
+        # Quit and Reset button handling
+        else:       
+            selectedButton = getButtonAtPixel(mousex,mousey, quitButtonRect, resetButtonRect)
+            if selectedButton=="Quit":
+                drawHighlightButton(quitButtonRect)
+                if mouseClicked:
+                    pygame.quit()
+                    sys.exit()
+            elif selectedButton=="Reset":
+                drawHighlightButton(resetButtonRect)
+                if mouseClicked:
+                    resetBoard()
+                    firstSelection = None
+                
         # Redraw the screen and wait a clock tick.
         pygame.display.update()
         FPSCLOCK.tick(FPS)
@@ -197,6 +204,13 @@ def getBoxAtPixel(x, y):
             if boxRect.collidepoint(x, y):
                 return (boxx, boxy)
     return (None, None)
+
+def getButtonAtPixel(x, y, quitRect, resetRect):
+    if quitRect.collidepoint(x, y):
+        return "Quit"
+    if resetRect.collidepoint(x, y):
+        return "Reset"
+    return None
 
 
 def drawIcon(shape, color, boxx, boxy):
@@ -270,6 +284,10 @@ def drawBoard(board, revealed):
 def drawHighlightBox(boxx, boxy):
     left, top = leftTopCoordsOfBox(boxx, boxy)
     pygame.draw.rect(DISPLAYSURF, HIGHLIGHTCOLOR, (left - 5, top - 5, BOXSIZE + 10, BOXSIZE + 10), 4)
+    
+def drawHighlightButton(buttonRect):
+    highlight_rect = buttonRect.inflate(10, 10)
+    pygame.draw.rect(DISPLAYSURF, HIGHLIGHTCOLOR, highlight_rect, 4, border_radius=12)
 
 
 def startGameAnimation(board):
@@ -308,6 +326,20 @@ def hasWon(revealedBoxes):
         if False in i:
             return False # return False if any boxes are covered.
     return True
+
+def resetBoard():
+    global mainBoard, revealedBoxes
+    # Reset the board
+    mainBoard = getRandomizedBoard()
+    revealedBoxes = generateRevealedBoxesData(False)
+
+    # Show the fully unrevealed board for a second.
+    drawBoard(mainBoard, revealedBoxes)
+    pygame.display.update()
+    pygame.time.wait(1000)
+
+    # Replay the start game animation.
+    startGameAnimation(mainBoard)
 
 
 if __name__ == '__main__':
