@@ -13,10 +13,11 @@ REVEALSPEED = 7 # speed boxes' sliding reveals and covers
 BOXSIZE = 70 # size of box height & width in pixels
 GAPSIZE = 15 # size of gap between boxes in pixels
 BOARDWIDTH = 6 # number of columns of icons
-BOARDHEIGHT = 5 # number of rows of icons
+BOARDHEIGHT = 4 # number of rows of icons
 assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
 XMARGIN = int((WINDOWWIDTH - (BOARDWIDTH * (BOXSIZE + GAPSIZE))) / 2)
 YMARGIN = int((WINDOWHEIGHT - (BOARDHEIGHT * (BOXSIZE + GAPSIZE))) / 2)
+FLAGS = pygame.FULLSCREEN
 
 #            R    G    B
 GRAY     = (100, 100, 100)
@@ -49,7 +50,7 @@ def main():
     global FPSCLOCK, DISPLAYSURF
     pygame.init()
     FPSCLOCK = pygame.time.Clock()
-    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), FLAGS)
 
     mousex = 0 # used to store x coordinate of mouse event
     mousey = 0 # used to store y coordinate of mouse event
